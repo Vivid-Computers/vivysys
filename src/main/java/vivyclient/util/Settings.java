@@ -39,7 +39,7 @@ public class Settings {
    private static String defaultFooterTags = "Shop online, securely: www.vividcomputers.co.nz\nChoose vivid.net when connecting to the Internet\nUpgrading to JetStream?  Best prices at vivid.net\nNeed a website?  Let vivid.net create and host it!\nThankyou for choosing Vivid Computers";
 
    public static boolean getUserHasSetup() {
-      return user.getBoolean("/userHasSetup", false);
+      return user.getBoolean("/userHasSetup", false) && getDBHostName().length() > 0;
    }
 
    public static void setUserHasSetup(boolean userHasSetup) {
@@ -174,7 +174,7 @@ public class Settings {
    }
 
    public static String getDBHostName() {
-      return user.get("/db/connection/hostName", system.get("/db/connection/hostName", ""));
+      return user.get("/db/connection/hostName", "");
    }
 
    public static void setDBHostName(String hostName) {
@@ -182,19 +182,19 @@ public class Settings {
    }
 
    public static String getDBServerPort() {
-      return system.get("/db/connection/serverPort", "1433");
+      return user.get("/db/connection/serverPort", "1433");
    }
 
    public static void setDBServerPort(String serverPort) {
-      system.put("/db/connection/serverPort", serverPort);
+      user.put("/db/connection/serverPort", serverPort);
    }
 
    public static String getDBName() {
-      return system.get("/db/connection/name", "vivysys");
+      return user.get("/db/connection/name", "vivysys");
    }
 
    public static void setDBName(String name) {
-      system.put("/db/connection/name", name);
+      user.put("/db/connection/name", name);
    }
 
    public static String getDBUserName() {
