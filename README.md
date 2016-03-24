@@ -10,13 +10,23 @@ You need to have:
 
 Optionally, download Intellij from https://www.jetbrains.com/idea/download/ and Import the project by importing `pom.xml`
 
+Developing
+----------
+
 From your IDE, you can launch the program by running the `main` method in `vivyclient.Client`
+(in IntelliJ, right click Client and select Run)
 
-Building
---------
+Releasing
+---------
 
-From the command line, in the root of this project folder run: `mvn releaser:release`
+Push your changes to git hub:
 
-It will create a jar file in `target/vivysys-{version}.jar`
+    git add .
+    git commit -m "Updated something"
+    git push origin master
 
-Run it with `java -jar {jarfile}`
+Release it:
+
+    mvn releaser:release
+
+Copy `target/vivysys-{version}.jar` somewhere and run it with `java -jar {jarname}`
