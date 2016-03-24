@@ -1,0 +1,7 @@
+target/
+.idea/
+out/
+*.iml
+error_log.txt
+sql_log.txt
+dependency-reduced-pom.xml
