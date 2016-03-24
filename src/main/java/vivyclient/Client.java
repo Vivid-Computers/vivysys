@@ -84,7 +84,7 @@ public class Client extends JFrame {
             properties.load(is);
             return properties.getProperty("version", "local");
         } catch (Exception e) {
-            return "error loading version";
+            return "local";
         }
     }
 

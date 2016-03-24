@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.print.PrinterException;
 import vivyclient.print.PrintContext;
-import vivyclient.print.common.LogoTableCell;
 import vivyclient.print.table.BlankTableRow;
 import vivyclient.print.table.DefaultTableRow;
 import vivyclient.print.table.NestedTableCell;
@@ -40,8 +39,8 @@ public class HeaderPrintableTable extends PrintableTable {
       column4.setAlign("E");
       TableBlock block = new TableBlock(this);
       DefaultTableRow topRow = new DefaultTableRow(block, "S");
-      new LogoTableCell(topRow, column1, 1, 75.0D, Color.black);
-      new TextTableCell("vivid computers", topRow, column2, 2, vividFont, Color.black);
+      new LogoTableCell(topRow, column1, 1, 75.0D);
+      new TextTableCell("  vivid computers", topRow, column2, 2, vividFont, Color.black);
       if(this.showGSTNumber) {
          PrintableTable addressRow1 = new PrintableTable(0.0D, Double.MAX_VALUE, 0.0D);
          TableColumn addressRow2 = new TableColumn(1.0D, addressRow1);
