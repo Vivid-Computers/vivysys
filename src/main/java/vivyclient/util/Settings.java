@@ -36,7 +36,7 @@ public class Settings {
    private static final String PRINT_FOOTER_TAGS = "/print/all/footerTags";
    private static Preferences system = Preferences.systemRoot();
    private static Preferences user = Preferences.userRoot();
-   private static String defaultFooterTags = "Shop online, securely: www.vividcomputers.co.nz\nChoose vivid.net when connecting to the Internet\nUpgrading to JetStream?  Best prices at vivid.net\nNeed a website?  Let vivid.net create and host it!\nThankyou for choosing Vivid Computers";
+   private static String defaultFooterTags = "Paying by internet banking? Our account # is 06 0185 0148537 00";
 
    public static boolean getUserHasSetup() {
       return user.getBoolean("/userHasSetup", false) && getDBHostName().length() > 0;
